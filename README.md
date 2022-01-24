@@ -23,6 +23,23 @@ pip install torch-geometric==2.0.3
 pip install torch-geometric-temporal==0.42 --no-deps
 ```
 
+```
+pip install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
+pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
+pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
+pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
+pip install torch-geometric==2.0.3
+pip install torch-geometric-temporal==0.42 --no-deps
+```
+
+## 卸载
+
+```
+pip uninstall torch torchvision torchaudio torchtext torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric torch-geometric-temporal -y
+```
+
 ## Tips
 文件夹 `1-gru/` 演示了如何使用 GRU 进行预测。
 
+文件夹 `2-pyg/` 演示了如何使用 pyg 的基本使用方法。
