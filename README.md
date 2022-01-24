@@ -23,3 +23,6 @@ pip install torch-geometric==2.0.3
 pip install torch-geometric-temporal==0.42 --no-deps
 ```
 
+## Tips
+文件夹 `1-gru/` 演示了如何使用 GRU 进行预测。
+
