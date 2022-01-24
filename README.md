@@ -42,4 +42,6 @@ pip uninstall torch torchvision torchaudio torchtext torch-scatter torch-sparse 
 ## Tips
 文件夹 `1-gru/` 演示了如何使用 GRU 进行预测。
 
-文件夹 `2-pyg/` 演示了如何使用 pyg 的基本使用方法。
+文件夹 `2-pyg/` 演示了 pyg 的基本使用方法。
+
+文件夹 `3-pygt/` 演示了 pygt 的基本使用方法。
