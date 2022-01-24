@@ -12,7 +12,7 @@ from torch.utils.data import TensorDataset, DataLoader
 from sklearn.preprocessing import MinMaxScaler
 
 # Define data root directory
-data_dir = "../data/gru/"
+data_dir = "D:\\uestc-master\\PyGT\\data\\gru\\"
 print(os.listdir(data_dir))
 
 
@@ -79,6 +79,7 @@ for file in files:
 ## 构造 batch
 batch_size = 1024
 
+# train_data 的结构： 第一维  所有序列；第二维 与当前时刻相关的时序；第三维度 单一时序的特征
 train_data = TensorDataset(torch.from_numpy(train_x), torch.from_numpy(train_y))
 train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size, drop_last=True)
 
@@ -203,7 +204,7 @@ def evaluate(model, test_x, test_y, label_scalers):
 ## 设置学习率并进行训练
 lr = 0.001
 gru_model = train(train_loader, lr, model_type="GRU")
-lstm_model = train(train_loader, lr, model_type="LSTM")
+# lstm_model = train(train_loader, lr, model_type="LSTM")
 
 gru_outputs, targets, gru_sMAPE = evaluate(gru_model, test_x, test_y, label_scalers)
 # lstm_outputs, targets, lstm_sMAPE = evaluate(lstm_model, test_x, test_y, label_scalers)
