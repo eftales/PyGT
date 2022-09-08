@@ -90,6 +90,7 @@ is_cuda = torch.cuda.is_available()
 if is_cuda:
     device = torch.device("cuda")
 else:
+    exit(-1)
     device = torch.device("cpu")
 
 ## 构造神经网络
@@ -134,7 +135,7 @@ class LSTMNet(nn.Module):
                   weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().to(device))
         return hidden
 
-def train(train_loader, learn_rate, hidden_dim=256, EPOCHS=5, model_type="GRU"):
+def train(train_loader, learn_rate, hidden_dim=256, EPOCHS=10, model_type="GRU"):
     
     # Setting common hyperparameters
     input_dim = next(iter(train_loader))[0].shape[2]
@@ -202,7 +203,7 @@ def evaluate(model, test_x, test_y, label_scalers):
     return outputs, targets, sMAPE
 
 ## 设置学习率并进行训练
-lr = 0.001
+lr = 0.005
 gru_model = train(train_loader, lr, model_type="GRU")
 # lstm_model = train(train_loader, lr, model_type="LSTM")
 
